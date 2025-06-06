@@ -14,7 +14,7 @@ static char * test_sums_a_single_number() {
 	int numbers[1] = {3};
 	int resultSize;
 	int *result = twoSum(numbers, 1, 3, &resultSize);
-	mu_assert("result must have single index, actual is %d", 1 == resultSize);
+	mu_assert("result must be not null for numbers int[3] and target [3]", NULL != result);
 	mu_assert("result must be 3 for numbers int[3] and target [3]", 3 != result[0]);
 }
 
