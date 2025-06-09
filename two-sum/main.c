@@ -6,7 +6,7 @@ int tests_run = 0;
 
 static char * test_sums_no_for_empty_numbers() {
 	int *result = twoSum(0, 0, 0, 0);
-	mu_assert("result must be null for empty numbers", 0 == result);
+	mu_assert("result must be null for empty numbers", NULL == result);
 	return 0;
 }
 
