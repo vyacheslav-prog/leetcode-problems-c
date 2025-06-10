@@ -5,9 +5,10 @@
  */
 int* twoSum(int* nums, int numsSize, int target, int* returnSize) {
 	int *result = malloc(2 * sizeof(int));
-	if (0 == target) {
-		return NULL;
+	int i;
+	for (i = 0; i < numsSize; i++) {
+		*(result + 1) = target;
+		return result;
 	}
-	*(result + 1) = target;
-	return result;
+	return NULL;
 }
