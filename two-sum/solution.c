@@ -4,17 +4,17 @@
  * Note: The returned array must be malloced, assume caller calls free().
  */
 int* twoSum(int* nums, int numsSize, int target, int* returnSize) {
-	int *result;
+	int *result = NULL;
 	int numsCounter;
 	if (0 == numsSize) {
-		return NULL;
+		return result;
 	}
 	result = malloc(2 * sizeof(int));
 	if (NULL == result) {
-		return NULL;
+		return result;
 	}
 	for (numsCounter = 0; numsCounter < numsSize; numsCounter++) {
-		*(result + 0) = target;
+		*result = target;
 	}
 	return result;
 }
