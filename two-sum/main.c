@@ -19,9 +19,18 @@ static char * test_sums_a_single_number() {
 	return 0;
 }
 
+static char * test_sums_no_for_single_unsuitable_target() {
+	int numbers[1] = {5};
+	int resultSize;
+	int *result = twoSum(numbers, 1, 4, &resultSize);
+	mu_assert("result must be null for numbers [{5}] and unsuitable target [4]", NULL == result);
+	return 0;
+}
+
 static char * all_tests() {
 	mu_run_test(test_sums_no_for_empty_numbers);
 	mu_run_test(test_sums_a_single_number);
+	mu_run_test(test_sums_no_for_single_unsuitable_target);
 	return 0;
 }
 
