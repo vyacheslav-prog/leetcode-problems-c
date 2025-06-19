@@ -13,8 +13,12 @@ int* twoSum(int* nums, int numsSize, int target, int* returnSize) {
 	if (NULL == result) {
 		return result;
 	}
-	for (numsCounter = 0; numsCounter < numsSize; numsCounter++) {
+	for (numsCounter = 0; numsCounter < numsSize && target == *nums; numsCounter++) {
 		*result = target;
+		*returnSize += 1;
 	}
-	return result;
+	if (0 != *returnSize) {
+		return result;
+	}
+	return NULL;
 }

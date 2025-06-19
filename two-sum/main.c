@@ -12,16 +12,17 @@ static char * test_sums_no_for_empty_numbers() {
 
 static char * test_sums_a_single_number() {
 	int numbers[1] = {3};
-	int resultSize;
+	int resultSize = 0;
 	int *result = twoSum(numbers, 1, 3, &resultSize);
 	mu_assert("result must be not null for numbers int[3] and target [3]", NULL != result);
 	mu_assert("result must be 3 for numbers int[3] and target [3]", 3 == *result);
+	mu_assert("result size must be [1] for numbers [{3}] and target [3]", 1 == resultSize);
 	return 0;
 }
 
 static char * test_sums_no_for_single_unsuitable_target() {
 	int numbers[1] = {5};
-	int resultSize;
+	int resultSize = 0;
 	int *result = twoSum(numbers, 1, 4, &resultSize);
 	mu_assert("result must be null for numbers [{5}] and unsuitable target [4]", NULL == result);
 	return 0;
