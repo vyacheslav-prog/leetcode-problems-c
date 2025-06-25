@@ -15,7 +15,7 @@ static char * test_sums_a_single_number() {
 	int resultSize = 0;
 	int *result = twoSum(numbers, 1, 3, &resultSize);
 	mu_assert("result must be not null for numbers int[3] and target [3]", NULL != result);
-	mu_assert("result must be 3 for numbers int[3] and target [3]", 3 == *result);
+	mu_assert("result must be [{0}] for numbers [{3}] and target [3]", 0 == *result);
 	mu_assert("result size must be [1] for numbers [{3}] and target [3]", 1 == resultSize);
 	return 0;
 }
@@ -32,7 +32,7 @@ static char * test_sums_two_numbers() {
 	int numbers[2] = {1, 1};
 	int resultSize = 0;
 	int *result = twoSum(numbers, 2, 2, &resultSize);
-	mu_assert("result must be [{1, 1}] for numbers [{1, 1}] and target [2]", 2 == resultSize && 1 == *result && 1 == *(result+1));
+	mu_assert("result must be [{1, 1}] for numbers [{1, 1}] and target [2]", 2 == resultSize && 0 == *result && 1 == *(result+1));
 	return 0;
 }
 
