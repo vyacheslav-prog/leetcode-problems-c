@@ -14,7 +14,7 @@ int* twoSum(int* nums, int numsSize, int target, int* returnSize) {
 		return result;
 	}
 	for (numsCounter = 0; numsCounter < numsSize && *nums <= target; numsCounter++) {
-		*(result + *returnSize) = *(nums + *returnSize);
+		*(result + *returnSize) = numsCounter;
 		*returnSize += 1;
 	}
 	if (0 != *returnSize) {
