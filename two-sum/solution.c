@@ -6,7 +6,7 @@
 int* twoSum(int* nums, int numsSize, int target, int* returnSize) {
 	int *result = NULL;
 	int numsCounter;
-	if (0 == numsSize) {
+	if (0 == numsSize || 2 < numsSize) {
 		return result;
 	}
 	result = malloc(2 * sizeof(int));
