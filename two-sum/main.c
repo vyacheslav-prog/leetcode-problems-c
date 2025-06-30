@@ -44,12 +44,21 @@ static char * test_sums_only_two_numbers_for_target() {
 	return 0;
 }
 
+static char * test_sums_two_numbers_when_first_is_skipped() {
+	int numbers[3] = {1, 2, 3};
+	int resultSize = 0;
+	int *result = twoSum(numbers, 3, 5, &resultSize);
+	mu_assert("result must be [{1, 2}] for numbers [{1, 2, 3}] and target [5]", 0 != resultSize);
+	return 0;
+}
+
 static char * all_tests() {
 	mu_run_test(test_sums_no_for_empty_numbers);
 	mu_run_test(test_sums_a_single_number);
 	mu_run_test(test_sums_no_for_single_unsuitable_target);
 	mu_run_test(test_sums_two_numbers);
 	mu_run_test(test_sums_only_two_numbers_for_target);
+	mu_run_test(test_sums_two_numbers_when_first_is_skipped);
 	return 0;
 }
 
