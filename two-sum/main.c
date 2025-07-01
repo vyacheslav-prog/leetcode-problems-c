@@ -45,10 +45,10 @@ static char * test_sums_only_two_numbers_for_target() {
 }
 
 static char * test_sums_two_numbers_when_first_is_skipped() {
-	int numbers[3] = {1, 2, 3};
+	int numbers[3] = {2, 3, 4};
 	int resultSize = 0;
-	int *result = twoSum(numbers, 3, 5, &resultSize);
-	mu_assert("result must be [{1, 2}] for numbers [{1, 2, 3}] and target [5]", 0 != resultSize);
+	int *result = twoSum(numbers, 3, 7, &resultSize);
+	mu_assert("result must be [{1, 2}] for numbers [{2, 3, 4}] and target [7]", 0 != resultSize);
 	return 0;
 }
 
