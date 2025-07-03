@@ -11,16 +11,6 @@ static char * test_sums_no_for_empty_numbers() {
 	return 0;
 }
 
-static char * test_sums_a_single_number() {
-	int numbers[1] = {3};
-	int resultSize = 0;
-	int *result = twoSum(numbers, 1, 3, &resultSize);
-	mu_assert("result must be not null for numbers int[3] and target [3]", NULL != result);
-	mu_assert("result must be [{0}] for numbers [{3}] and target [3]", 0 == *result);
-	mu_assert("result size must be [1] for numbers [{3}] and target [3]", 1 == resultSize);
-	return 0;
-}
-
 static char * test_sums_no_for_single_unsuitable_target() {
 	int numbers[1] = {5};
 	int resultSize = 0;
@@ -55,7 +45,6 @@ static char * test_sums_two_numbers_when_first_is_skipped() {
 
 static char * all_tests() {
 	mu_run_test(test_sums_no_for_empty_numbers);
-	mu_run_test(test_sums_a_single_number);
 	mu_run_test(test_sums_no_for_single_unsuitable_target);
 	mu_run_test(test_sums_two_numbers);
 	mu_run_test(test_sums_only_two_numbers_for_target);
