@@ -23,7 +23,7 @@ static char * test_sums_two_numbers() {
 	int numbers[2] = {1, 1};
 	int resultSize = 0;
 	int *result = twoSum(numbers, 2, 2, &resultSize);
-	mu_assert("result must be [{1, 1}] for numbers [{1, 1}] and target [2]", 2 == resultSize && 0 == *result && 1 == *(result+1));
+	mu_assert("result must be [{0, 1}] for numbers [{1, 1}] and target [2]", 2 == resultSize && 0 == *result && 1 == *(result+1));
 	return 0;
 }
 
@@ -36,10 +36,10 @@ static char * test_sums_only_two_numbers_for_target() {
 }
 
 static char * test_sums_two_numbers_when_first_is_skipped() {
-	int numbers[3] = {2, 3, 4};
+	int numbers[3] = {3, 2, 4};
 	int resultSize = 0;
-	int *result = twoSum(numbers, 5, 7, &resultSize);
-	mu_assert("result must be [{1, 2}] for numbers [{2, 3, 4}] and target [7]", 0 != resultSize);
+	int *result = twoSum(numbers, 3, 6, &resultSize);
+	mu_assert("result must be [{1, 2}] for numbers [{3, 2, 4}] and target [6]", 0 != resultSize && 1 == *result && 2 == *(result+1));
 	return 0;
 }
 
