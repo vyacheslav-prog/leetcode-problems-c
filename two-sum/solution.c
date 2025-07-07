@@ -12,7 +12,7 @@ int* twoSum(int* nums, int numsSize, int target, int* returnSize) {
 	if (NULL == result) {
 		return result;
 	}
-	while (secondIndex <= numsSize && target != *(nums+firstIndex) + *(nums+secondIndex)) {
+	while (secondIndex <= numsSize && (secondIndex == numsSize || target != *(nums+firstIndex) + *(nums+secondIndex))) {
 		if (numsSize == secondIndex) {
 			firstIndex = secondIndex = firstIndex + 1;
 		}
